@@ -78,6 +78,7 @@ class tetris:
                 try:
                     self.handle(event)
                 except:
+                    self.gameOver = True
                     break
             if self.drop:
                 self.move("DOWN")
@@ -132,7 +133,6 @@ class tetris:
             if dir == "DOWN":
                 new = True
 
-        print(col, new)
         return col, new
 
     def checkLines(self):
